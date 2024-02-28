@@ -1,6 +1,6 @@
 ---
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
 import '../styles/global.css'
 
 const pageTitle = "Sobre mi";
@@ -29,29 +29,9 @@ const skillColor = "navy";
 const fontWeight = "bold";
 const textCase  =  "uppercase";
 ---
-
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-    <style define:vars={{skillColor, fontWeight, textCase }}>
-      h1 {
-        color: purple;
-        font-size: 4rem;
-      }
-      .skill {
-        color: var(--skillColor);
-        font-weight: var(--fontWeight);
-        text-transform: var(--textCase);
-      }
-    </style>
-  </head>
-  <body>
-   <Header />
-
+    
+    <BaseLayout pageTitle={pageTitle}> 
+      
     <h1>Mi sitio Astro</h1>
     <h2>{pageTitle}</h2>
     <span> ! y mi sitio creado con Astro!</span>
@@ -86,10 +66,16 @@ const textCase  =  "uppercase";
         <p>Mi objetivo no son 3 días.</p>
       )
     }
+    </BaseLayout>
 
-    <Footer/>
-    <script>
-      import "../scripts/menu.js";
-     </script>
-  </body>
-</html>
+    <style define:vars={{skillColor, fontWeight, textCase }}>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+      .skill {
+        color: var(--skillColor);
+        font-weight: var(--fontWeight);
+        text-transform: var(--textCase);
+      }
+    </style>
