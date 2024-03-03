@@ -22,7 +22,10 @@ const { pageTitle} = Astro.props;
     <h1>{pageTitle}</h1>
     <!--slot se utiliza para inyectar contenido Hijo -->
     <slot />
+	<h3>Este es el subtítulo de inyectado desde un Slot</h3>
+	<p>Párrafo inyectado desde un slot, esto permite utilizar un child a BaseLayout</p>
 	<Footer/>
+
 	<script>
 	 import "../scripts/menu.js";
 	</script>

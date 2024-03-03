@@ -13,6 +13,7 @@ html {
   }
   
   * {
+    text-decoration:none;
     box-sizing: border-box;
   }
   
@@ -21,7 +22,7 @@ html {
     font-size: 2.5rem;
   }
 
-header {
+nav {
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -37,30 +38,17 @@ header {
   width: 40px;
   height: 5px;
   margin-bottom: 10px;
-  background-color: #ff9776;
+  background-color: hwb(0 17% 13%);
 }
 
 .nav-links {
   width: 100%;
-  top: 5;
+  top: 40px;
   left: 0;
-  background-color: #f1f5f9;
-  height: 400px;
-  padding: 10px;
+  background-color: #ebe9d8;
   display: none;
   margin: 0;
   position: absolute;
-
-}
-
-@keyframes slideDown {
-  from {
-      transform: translatex(-100%);
-  }
-
-  to {
-      transform: translatex(0);
-  }
 }
 
 .nav-links a {
@@ -74,23 +62,40 @@ header {
 }
 
 .nav-links a:hover, a:focus {
-  background-color: #ff9776;
+  background-color: #df2013;
+ 
 }
 
 .expanded {
   display: unset;
-  animation: slideDown 0.5s ease-in-out;
-  
 }
-
+a {
+  color: #f1f5f9;
+}
 /*ThemeIcon*/
 html.dark {
-  background-color: #0d0950;
+  background-color: #35374B;
   color: #fff;
 }
 
 .dark .nav-links a {
   color: #fff;
+}
+
+.wrapp {
+  display: flex;
+  flex-direction: row;
+  padding: 3em 0;
+  gap: 10px;
+}
+@media screen and (width <= 600px) {
+  .wrapp {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    gap: 10px;
+  }
 }
 @media screen and (min-width: 636px) {
   .nav-links {
@@ -109,5 +114,6 @@ html.dark {
   .hamburger {
     display: none;
   }
+  
 }
   

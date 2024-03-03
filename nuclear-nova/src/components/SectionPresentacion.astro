@@ -1,0 +1,48 @@
+---
+const plantillas = [
+   {image: "../../public/profile3.jpg"}, 
+  { title: "Acerca de mí" },
+  { experiencia: "Más de 16 años de experiencia en Diseño gráfico" },
+  { especialidad: "CSS moderno y JavaScript" },
+  {
+    descripcion:
+      "Función principal es garantizar que los productos digitales satisfagan las necesidades y expectativas de los usuarios de manera efectiva y agradable. Esto implica una variedad de actividades, desde la investigación y el análisis de usuarios hasta la creación de prototipos y pruebas de usabilidad. Tu trabajo implica:",
+  },
+];
+---
+
+{
+  plantillas.map((plantilla) => (
+    <section>
+        <figure>
+            <img src={plantilla.image} alt="">    
+        </figure>
+      <h2>{plantilla.title}</h2>
+      <span>{plantilla.experiencia}</span>
+      <strong>{plantilla.especialidad}</strong>
+      <p>{plantilla.descripcion}</p>
+    </section>
+  ))
+}
+
+<style>
+    section {
+        padding: 10px 5px;
+        
+    }
+    p {
+        line-height: 1.5;
+        word-wrap: break-word;
+        font-size: 1rem;
+    }
+    img {
+        max-width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+    }
+    h2 {
+      font-size: 14px;
+      font-weight: 300;
+      color: darkgray;
+    }
+</style>

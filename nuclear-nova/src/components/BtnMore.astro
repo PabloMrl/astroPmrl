@@ -1,0 +1,22 @@
+---
+
+const {mensaje,  } = Astro.props;
+---
+
+<button id="btn"  >{mensaje}</button>
+
+
+<style>
+    button {
+        padding: 5px 10px;
+        background-color: thistle;
+        border-radius: 10px;
+        width: 120px;
+        color: #fff;
+        transition: background-color .4s ease;
+    }
+
+    button:hover {
+        background-color: bisque;
+    }
+</style>

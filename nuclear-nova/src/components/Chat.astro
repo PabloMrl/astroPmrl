@@ -1,0 +1,71 @@
+---
+import BtnMore from '../components/BtnMore.astro';
+
+const personas = [
+  {
+    nombre: "Andrew Alfred",
+    cargo: "Asesor Técnico",
+    imagen: "../../public/profile.jpg",
+    url: "http://www.google.com",
+  },
+  {
+    nombre: "María López",
+    cargo: "Diseñadora UX",
+    imagen: "../../public/profile2.jpg",
+    url: "http://www.google.com",
+  },
+  {
+    nombre: "Juana Mason",
+    cargo: "Diseñadora UI",
+    imagen: "../../public/profile3.jpg",
+    url: "http://www.google.com",
+  },
+  // Agregar más objetos de persona según sea necesario
+];
+
+---
+
+{
+  personas.map((persona) => (
+      <div class=" container">
+        <img
+          src={persona.imagen}
+          alt="Persona de la card"
+          class="size-14 object-cover rounded-full  "
+        />
+        <div class="description">
+          <strong class="text-cyan-800 ">{persona.nombre}</strong>
+          <span class="text-stone-600">{persona.cargo}</span>
+         
+        </div>
+        <BtnMore mensaje="ver más"/>
+      </div>
+      
+  ))
+}
+
+<style>
+  .container {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+    margin-bottom: 10px;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 5px;
+  }
+ .description {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px;
+ }
+
+ @media screen and (width >= 1200px) {
+  .container {
+    display: flex;
+    width: 300px;
+  }
+ }
+</style>

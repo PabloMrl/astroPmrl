@@ -1,9 +1,20 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Greeting from '../components/Greeting';
-const pageTitle = "Página de inicio";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Chat from "../components/Chat.astro";
+import ComponenteProps from "../components/SectionPresentacion.astro"
+
+const pageTitle = "UX Design";
 ---
+
 <BaseLayout pageTitle={pageTitle}>
-  <h2>El impresionante subtítulo de mi blog</h2>
-  <Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
+  <h2 class="text-slate-400">Nuestros Diseñadores están a tu disposición para resolver tus inquietudes. Asesoramiento en <span class=" text-red-500 ">Experiencia de Usuario (UX)</span> y <span class="text-red-500">Diseño de Interfaz de Usuario (UI)</span> </h2>
+  <p class="mt-3 text-slate-400">En un mundo cada vez más digitalizado, la experiencia del usuario se ha convertido en un factor crítico para el éxito de cualquier producto o servicio en línea. Desde aplicaciones móviles hasta plataformas web, la manera en que los usuarios interactúan con una interfaz digital puede determinar el nivel de satisfacción, la retención y, en última instancia, el éxito comercial.</p>
+  <div class="wrapp">
+    <Chat/>
+   
+  </div>
+
+  <ComponenteProps/>
+ 
 </BaseLayout>
+

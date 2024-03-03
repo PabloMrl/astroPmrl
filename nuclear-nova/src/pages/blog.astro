@@ -11,7 +11,8 @@ const pageTitle = "Mi blog de Astro aprendizaje" ;
   <p> Bienvenidos a Mi Blog. </p>
    <p> Aquí les hablaré de lo que  iré desarrollando día a día, de acuerdo a los avances que daré  con Astro</p>
 
-   <ul>
+   <ul class="culo">
      {allPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
    </ul>
 </BaseLayout>
+
